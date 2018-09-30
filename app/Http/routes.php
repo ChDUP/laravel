@@ -11,26 +11,6 @@
 |
 */
 
-Route::get('users', 'UsersController@getInfos');
-Route::post('users', 'UsersController@postInfos');
-
-Route::get('{n}', function($n) {
-    return response('Je suis la page '. $n .' !', 200);
-})->where('n', '[1-3]');
-
-Route::get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
-
-
-Route::get('facture/{n}', function ($n) {
-    return view('facture')->with('numero', $n);
-})->where('n', '[0-9]+');
-
-Route::get('/', 'WelcomeController@index');
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -43,5 +23,25 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('contact', 'ContactController@getForm');
+    Route::post('contact', 'ContactController@postForm');
+
+    Route::get('users', 'UsersController@getInfos');
+    Route::post('users', 'UsersController@postInfos');
+
+    Route::get('{n}', function($n) {
+        return response('Je suis la page '. $n .' !', 200);
+    })->where('n', '[1-3]');
+
+    Route::get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
+
+    Route::get('facture/{n}', function ($n) {
+        return view('facture')->with('numero', $n);
+    })->where('n', '[0-9]+');
+
+    Route::get('/', 'WelcomeController@index');
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });

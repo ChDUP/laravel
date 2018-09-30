@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'mail@chdup.fr', 'name' => 'Laurent - admin du super site'],
 
     /*
     |--------------------------------------------------------------------------
