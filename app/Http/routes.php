@@ -23,6 +23,9 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get('photo', 'PhotoController@getForm');
+    Route::post('photo', 'PhotoController@postForm');
+    
     Route::get('contact', 'ContactController@getForm');
     Route::post('contact', 'ContactController@postForm');
 
