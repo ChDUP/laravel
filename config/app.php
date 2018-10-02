@@ -157,6 +157,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
+        /*
+         * Ajout de la debug bar barryvdh
+         */
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
