@@ -1,5 +1,6 @@
 /vendor
 /node_modules
+/resources/docker/db/data
 Homestead.yaml
 Homestead.json
 .env
